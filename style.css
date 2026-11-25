@@ -1,0 +1,255 @@
+
+/*******Home Page*******/
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #24211e;
+    color: #f5eadb;
+    line-height: 1.6;
+}
+
+
+header {
+    background-color: #37312a;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #e4b56f;
+}
+
+header h1 {
+    color: #e4b56f;
+    margin: 0;
+    font-size: 32px;
+    text-transform: lowercase;
+}
+
+header p {
+    margin: 5px 0 15px;
+    color: #c6b7a2;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+nav a {
+    color: #f5eadb;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #e4b56f;
+}
+
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+
+#welcome {
+    background-color: #37312a;
+    padding: 50px 30px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+#welcome h2 {
+    font-size: 32px;
+    color: #e4b56f;
+    margin-top: 0;
+}
+
+#welcome p {
+    max-width: 600px;
+    margin: 0 auto 25px;
+}
+
+
+#welcome a {
+    display: inline-block;
+    background-color: #e4b56f;
+    color: #24211e;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#welcome a:hover {
+    background-color: #f3cb91;
+}
+
+
+#features {
+    margin-top: 50px;
+}
+
+#features h2 {
+    text-align: center;
+    color: #e4b56f;
+    margin-bottom: 25px;
+}
+
+#features article {
+    background-color: #37312a;
+    padding: 20px;
+    margin-bottom: 15px;
+    border: 1px solid #51483d;
+    border-radius: 6px;
+}
+
+#features article h3 {
+    color: #e4b56f;
+    margin-top: 0;
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #37312a;
+    color: #c6b7a2;
+    font-size: 13px;
+    border-top: 1px solid #51483d;
+}
+
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 26px;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    main {
+        padding: 20px 15px;
+    }
+
+    #welcome {
+        padding: 30px 20px;
+    }
+
+    #welcome h2 {
+        font-size: 25px;
+    }
+}
+
+/* grid layout for the cards */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+
+.feature-grid article {
+    transition: transform 0.1s, border-color 0.3s;
+}
+
+.feature-grid article:hover {
+    transform: translateY(-5px);
+    border-color: #e4b56f;
+}
+
+
+@media (max-width: 768px) {
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+
+
+
+
+/****** Diagnostics Page ******/
+#diagnostics {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #37312a;
+    padding: 30px;
+    border: 1px solid #51483d;
+    border-radius: 8px;
+}
+
+#diagnostics h2 {
+    color: #e4b56f;
+    margin-top: 0;
+}
+
+#diagnostics p {
+    color: #f5eadb;
+}
+
+/* Diagnostic Form */
+#diagnostic-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+#diagnostic-form label {
+    font-weight: bold;
+    color: #e4b56f;
+}
+
+#diagnostic-form select {
+    padding: 12px;
+    background-color: #24211e;
+    color: #f5eadb;
+    border: 1px solid #75634b;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Diagnostic Button */
+#diagnostic-form button {
+    background-color: #e4b56f;
+    color: #24211e;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#diagnostic-form button:hover {
+    background-color: #f3cb91;
+}
+
+
+#diagnostic-form select:focus-visible,
+#diagnostic-form button:focus-visible {
+    outline: 3px solid #f3cb91;
+    outline-offset: 3px;
+}
+
+/* Mobile Layout */
+@media (max-width: 600px) {
+    #diagnostics {
+        padding: 20px;
+    }
+}

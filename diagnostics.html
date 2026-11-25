@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hardware Helper | Diagnostics</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>hardware helper</h1>
+        <p>PC Diagnostics & Guides</p>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="diagnostics.html">Diagnostics</a>
+            <a href="hardware.html">Hardware Guide</a>
+            <a href="troubleshooting.html">Troubleshooting</a>
+            <a href="resources.html">Resources & FAQ</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="diagnostics">
+            <h2>PC Hardware Diagnostics</h2>
+
+            <p>
+                Having problems with your computer?
+                Select the issue you're experiencing to
+                begin troubleshooting.
+            </p>
+
+            <form id="diagnostic-form">
+                <label for="problem">What's wrong with your PC?</label>
+
+                <select id="problem" name="problem" required>
+                    <option value="">-- Select a Problem --</option>
+                    <option value="no-display">PC turns on but no display</option>
+                    <option value="overheating">Computer overheating</option>
+                    <option value="slow-performance">Slow computer performance</option>
+                    <option value="no-power">Computer won't turn on</option>
+                    <option value="random-shutdown">Random shutdowns</option>
+                </select>
+
+                <button type="submit">Start Diagnosis</button>
+            </form>
+
+            <section id="diagnostic-results" aria-live="polite">
+               
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Hardware Helper</p>
+    </footer>
+
+</body>
+</html>
