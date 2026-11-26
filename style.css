@@ -1,4 +1,3 @@
-
 /*******Home Page*******/
 body {
     margin: 0;
@@ -252,4 +251,17 @@ footer {
     #diagnostics {
         padding: 20px;
     }
+}
+
+#diagnostic-results {
+    margin-top: 25px;
+}
+
+#diagnostic-results:not(:empty) {
+    background-color: #24211e;
+    border: 1px solid #e4b56f;
+    border-radius: 6px;
+    padding: 20px;
+    color: #f5eadb;
+    line-height: 1.7;
 }
