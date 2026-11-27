@@ -125,9 +125,32 @@ if (diagnosticForm) {
         return;
     }
 
-        else if (problem === "random-shutdown") {
-            message = "Possible Cause: Overheating or power supply instability. Monitor your temperatures and check power connections.";
-        }
+        
+    else if (problem === "random-shutdown") {
+        results.innerHTML = `
+            <h3>Random Shutdown Troubleshooting</h3>
+
+            <p>Does your computer shut down mainly while gaming or running demanding programs?</p>
+
+            <button type="button" id="shutdown-yes">Yes</button>
+            <button type="button" id="shutdown-no">No</button>
+
+            <p id="follow-up-result" aria-live="polite"></p>
+        `;
+
+        document.getElementById("shutdown-yes").addEventListener("click", function() {
+            document.getElementById("follow-up-result").textContent =
+                "If your PC shuts down during demanding tasks, possible causes include overheating or power delivery problems. Check your CPU and GPU temperatures, make sure the fans are working, and inspect external power connections.";
+        });
+
+        document.getElementById("shutdown-no").addEventListener("click", function() {
+            document.getElementById("follow-up-result").textContent =
+                "If your PC shuts down randomly even during basic tasks, possible causes include power issues, unstable hardware, or software errors. Check Windows Event Viewer for errors and inspect your power connections.";
+        });
+
+        return;
+    }
+
 
         // Display the advice
         results.textContent = message;
