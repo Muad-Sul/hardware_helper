@@ -99,9 +99,32 @@ if (diagnosticForm) {
         return;
     }
 
-        else if (problem === "no-power") {
-            message = "Possible Cause: Power supply or power connection issue. Check the power cable, outlet, and power switch.";
-        }
+        
+    else if (problem === "no-power") {
+        results.innerHTML = `
+            <h3>No Power Troubleshooting</h3>
+
+            <p>Do any lights or fans turn on when you press the power button?</p>
+
+            <button type="button" id="power-yes">Yes</button>
+            <button type="button" id="power-no">No</button>
+
+            <p id="follow-up-result" aria-live="polite"></p>
+        `;
+
+        document.getElementById("power-yes").addEventListener("click", function() {
+            document.getElementById("follow-up-result").textContent =
+                "If lights or fans turn on, your PC is receiving some power. Check your monitor connection and look for any motherboard diagnostic lights. The issue may involve the display or another component.";
+        });
+
+        document.getElementById("power-no").addEventListener("click", function() {
+            document.getElementById("follow-up-result").textContent =
+                "If nothing turns on, check the power outlet, power cable, and power supply switch. If you're using a desktop, make sure the power cable is firmly connected. A faulty power supply could also be responsible.";
+        });
+
+        return;
+    }
+
         else if (problem === "random-shutdown") {
             message = "Possible Cause: Overheating or power supply instability. Monitor your temperatures and check power connections.";
         }
