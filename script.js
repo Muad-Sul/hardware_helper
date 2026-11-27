@@ -73,9 +73,32 @@ if (diagnosticForm) {
         return;
     }
 
-        else if (problem === "slow-performance") {
-            message = "Possible Cause: Low available memory or too many background programs. Check Task Manager for high resource usage.";
-        }
+        
+    else if (problem === "slow-performance") {
+        results.innerHTML = `
+            <h3>Slow Performance Troubleshooting</h3>
+
+            <p>Is your computer slow even when you're only doing basic tasks, like browsing the internet?</p>
+
+            <button type="button" id="slow-yes">Yes</button>
+            <button type="button" id="slow-no">No</button>
+
+            <p id="follow-up-result" aria-live="polite"></p>
+        `;
+
+        document.getElementById("slow-yes").addEventListener("click", function() {
+            document.getElementById("follow-up-result").textContent =
+                "Your computer may have too many background programs, low available RAM, or slow storage. Open Task Manager and check CPU, Memory, and Disk usage.";
+        });
+
+        document.getElementById("slow-no").addEventListener("click", function() {
+            document.getElementById("follow-up-result").textContent =
+                "If your computer slows down mainly during gaming or demanding programs, check CPU and GPU temperatures, RAM usage, and whether your hardware meets the program's requirements.";
+        });
+
+        return;
+    }
+
         else if (problem === "no-power") {
             message = "Possible Cause: Power supply or power connection issue. Check the power cable, outlet, and power switch.";
         }
