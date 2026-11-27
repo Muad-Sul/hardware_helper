@@ -47,9 +47,32 @@ if (diagnosticForm) {
         return;
     }
 
-        else if (problem === "overheating") {
-            message = "Possible Cause: Dust buildup or poor airflow. Check your fans and clean dust from the computer.";
-        }
+        
+    else if (problem === "overheating") {
+        results.innerHTML = `
+            <h3>Overheating Troubleshooting</h3>
+
+            <p>Does your computer get hot even when you're not running demanding programs?</p>
+
+            <button type="button" id="heat-yes">Yes</button>
+            <button type="button" id="heat-no">No</button>
+
+            <p id="follow-up-result" aria-live="polite"></p>
+        `;
+
+        document.getElementById("heat-yes").addEventListener("click", function() {
+            document.getElementById("follow-up-result").textContent =
+                "Your PC may have poor airflow, dust buildup, or a cooling issue. Check that the fans are spinning and inspect the vents for dust.";
+        });
+
+        document.getElementById("heat-no").addEventListener("click", function() {
+            document.getElementById("follow-up-result").textContent =
+                "If overheating happens mainly during gaming or demanding tasks, check CPU and GPU temperatures, fan speeds, and case airflow.";
+        });
+
+        return;
+    }
+
         else if (problem === "slow-performance") {
             message = "Possible Cause: Low available memory or too many background programs. Check Task Manager for high resource usage.";
         }
