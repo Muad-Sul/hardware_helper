@@ -157,12 +157,12 @@ footer {
 
 
 .feature-grid article {
-    transition: transform 0.1s, border-color 0.3s;
+    transition: transform 0.3s, border-color 0.5s;
 }
 
 .feature-grid article:hover {
     transform: translateY(-5px);
-    border-color: #e4b56f;
+    box-shadow: 0 0 12px rgba(2, 25, 236, 0.5);
 }
 
 
@@ -299,4 +299,61 @@ footer {
     padding: 15px;
     margin-top: 15px;
     border-radius: 4px;
+}
+
+
+/* Hardware Guide Page */
+#hardware-guide h2 {
+    color: #e4b56f;
+    font-size: 28px;
+    margin-top: 0;
+}
+
+#hardware-guide > p {
+    margin-bottom: 30px;
+}
+
+/* Hardware Cards Grid */
+.hardware-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Individual Hardware Cards */
+.hardware-grid article {
+    background-color: #37312a;
+    padding: 25px;
+    border: 1px solid #51483d;
+    border-radius: 6px;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.hardware-grid article h3 {
+    color: #e4b56f;
+    margin-top: 0;
+}
+
+.hardware-grid article p {
+    color: #f5eadb;
+}
+
+/* Hover Effect */
+.hardware-grid article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 12px rgba(2, 25, 236, 0.5);
+}
+
+/* Tablet Layout */
+@media (max-width: 900px) {
+    .hardware-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile Layout */
+@media (max-width: 600px) {
+    .hardware-grid {
+        grid-template-columns: 1fr;
+    }
 }

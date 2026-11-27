@@ -1,21 +1,17 @@
-
-/* Hardware Helper - JavaScript */
-
 // Find the diagnostic form
 const diagnosticForm = document.getElementById("diagnostic-form");
 
-// Only run this code on pages containing the form
+
 if (diagnosticForm) {
 
     diagnosticForm.addEventListener("submit", function (event) {
 
-        // Prevent the page from refreshing
         event.preventDefault();
 
-        // Get the selected problem
+        
         const problem = document.getElementById("problem").value;
 
-        // Find the results section
+    
         const results = document.getElementById("diagnostic-results");
 
         let message = "";
