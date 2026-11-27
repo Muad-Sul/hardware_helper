@@ -265,3 +265,38 @@ footer {
     color: #f5eadb;
     line-height: 1.7;
 }
+
+
+/* Diagnostic Follow-Up Buttons */
+#diagnostic-results button {
+    background-color: #37312a;
+    color: #e4b56f;
+    border: 1px solid #e4b56f;
+    padding: 10px 25px;
+    margin: 10px 10px 10px 0;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Button Hover Effect */
+#diagnostic-results button:hover {
+    background-color: #e4b56f;
+    color: #24211e;
+}
+
+/* Keyboard Accessibility */
+#diagnostic-results button:focus-visible {
+    outline: 3px solid #f3cb91;
+    outline-offset: 3px;
+}
+
+/* Follow-Up Answer */
+#follow-up-result:not(:empty) {
+    background-color: #37312a;
+    border-left: 3px solid #e4b56f;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 4px;
+}

@@ -21,9 +21,32 @@ if (diagnosticForm) {
         let message = "";
 
         // Determine which troubleshooting advice to display
-        if (problem === "no-display") {
-            message = "Possible Cause: Loose display cable or RAM issue. Try checking your monitor connection and reseating your RAM.";
-        }
+        
+    if (problem === "no-display") {
+        results.innerHTML = `
+            <h3>No Display Troubleshooting</h3>
+
+            <p>Are your computer's fans spinning when you turn it on?</p>
+
+            <button type="button" id="fans-yes">Yes</button>
+            <button type="button" id="fans-no">No</button>
+
+            <p id="follow-up-result" aria-live="polite"></p>
+        `;
+
+        document.getElementById("fans-yes").addEventListener("click", function() {
+            document.getElementById("follow-up-result").textContent =
+                "If the fans are spinning, check your monitor input and display cable. If your PC has a dedicated graphics card, make sure the monitor is connected to the correct video output.";
+        });
+
+        document.getElementById("fans-no").addEventListener("click", function() {
+            document.getElementById("follow-up-result").textContent =
+                "If the fans are not spinning, check the power cable, outlet, and power supply switch. Your system may not be receiving power.";
+        });
+
+        return;
+    }
+
         else if (problem === "overheating") {
             message = "Possible Cause: Dust buildup or poor airflow. Check your fans and clean dust from the computer.";
         }
