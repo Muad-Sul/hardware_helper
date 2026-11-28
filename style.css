@@ -371,3 +371,42 @@ footer {
     background-color: #24211e;
 }
 
+
+
+/****** Hardware Search Bar ******/
+
+.hardware-search {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.hardware-search label {
+    color: #e4b56f;
+    font-weight: bold;
+}
+
+.hardware-search input {
+    background-color: #37312a;
+    color: #f5eadb;
+    border: 1px solid #75634b;
+    border-radius: 5px;
+    padding: 12px 15px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/****** Search Bar Focus Effect ******/
+
+.hardware-search input:focus {
+    outline: none;
+    border-color: #e4b56f;
+    box-shadow: 0 0 8px rgba(228, 181, 111, 0.4);
+}
+
+.hardware-search input::placeholder {
+    color: #b8a995;
+}

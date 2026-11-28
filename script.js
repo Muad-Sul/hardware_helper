@@ -153,3 +153,39 @@ if (diagnosticForm) {
 
     });
 }
+
+
+/****** Hardware Guide Search ******/
+
+// Find the search input
+const hardwareSearch = document.getElementById("hardware-search-input");
+
+// Only run this code on the Hardware Guide page
+if (hardwareSearch) {
+
+    // Get all hardware cards
+    const hardwareCards = document.querySelectorAll(".hardware-grid article");
+
+    // Listen for typing in the search bar
+    hardwareSearch.addEventListener("input", function() {
+
+        // Get the search text and convert it to lowercase
+        const searchText = hardwareSearch.value.toLowerCase().trim();
+
+        // Check each hardware card
+        hardwareCards.forEach(function(card) {
+
+            const cardText = card.textContent.toLowerCase();
+
+            // Show matching cards and hide non-matching cards
+            if (cardText.includes(searchText)) {
+                card.style.display = "";
+            } else {
+                card.style.display = "none";
+            }
+
+        });
+
+    });
+}
+
